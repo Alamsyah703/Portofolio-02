@@ -15,7 +15,7 @@
 			$password = $row['password'];
 		}
 		else{
-			$password = ($password);
+			$password = password_hash($password, PASSWORD_DEFAULT);
 		}
 
 		$sql = "UPDATE voters SET firstname = '$firstname', lastname = '$lastname', password = '$password' WHERE id = '$id'";

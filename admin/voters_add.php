@@ -5,7 +5,7 @@ if(isset($_POST['add'])){
   $firstname = $_POST['firstname'];
   $lastname = $_POST['lastname'];
   $email = $_POST['email'];
-  $password = ($_POST['password']);
+  $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
   $filename = $_FILES['photo']['name'];
   if(!empty($filename)){
     move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename); 
